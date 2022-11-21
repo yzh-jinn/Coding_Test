@@ -1,18 +1,18 @@
 #include<iostream>
 using namespace std;
 
-void test(int array[], int n) {
-
+void test(const int* arr, int n) {
+    
+    cout << "int array[3] is : " << arr[5] << endl;
 
 }
 
 
 int main (void) {
     
-    const int array[] = {1,2,3,4,5};
+    int array[] = {1,2,3,4,5};
 
-
-    test(array, 1);
+    test(array, 3);
 
     return 0;
 }
