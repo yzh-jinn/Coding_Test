@@ -35,18 +35,22 @@ MyClass::MyClass(const char * str)
         this->m_pData = new char[strlen(str) + 1];
         strcpy(this->m_pData, str);
     }
-    std::cout << "默认带参构造函数" << " this addr: " << this << std::endl;
+    std::cout << "默认带参构造函数" 
+              << " this addr: " 
+              << this << std::endl;
 }
 
- // 默认析构函数
-MyClass::~MyClass(void)
+// 默认析构函数
+MyClass::~MyClass(void) 
 {
     if (this->m_pData)
     {
         delete[] this->m_pData;
         this->m_pData = nullptr;
     }
-    std::cout << "默认析构函数" << " this addr: " << this << std::endl;
+    std::cout << "默认析构函数" 
+              << " this addr: " 
+              << this << std::endl;
 }
 
 // 默认拷贝构造函数
@@ -61,7 +65,9 @@ MyClass::MyClass(const MyClass &m)
         this->m_pData = new char[strlen(m.m_pData) + 1];
         strcpy(this->m_pData, m.m_pData);
     }
-    std::cout << "默认拷贝构造函数" << " this addr: " << this << std::endl;
+    std::cout << "默认拷贝构造函数" 
+              << " this addr: " 
+              << this << std::endl;
 }
 
 // 默认重载赋值运算符函数
@@ -82,21 +88,29 @@ MyClass & MyClass::operator =(const MyClass &m)
         strcpy(this->m_pData, m.m_pData);
     }
 
-    std::cout << "默认重载赋值运算符函数" << " this addr: " << this << std::endl;
+    std::cout << "默认重载赋值运算符函数" 
+              << " this addr: " 
+              << this << std::endl;
     return *this;
 }
 
 // 默认重载取址运算符函数
 MyClass * MyClass::operator &()
 {
-    std::cout << "默认重载取址运算符函数" << " this addr: " << this << std::endl;
+    std::cout << "默认重载取址运算符函数" 
+              << " this addr: " 
+              << this << std::endl;
+
     return this;
 }
 
 // 默认重载取址运算符const函数
 MyClass const * MyClass::operator &() const
 {
-    std::cout << "默认重载取址运算符const函数" << " this addr: " << this << std::endl;
+    std::cout << "默认重载取址运算符const函数" 
+              << " this addr: " 
+              << this << std::endl;
+
     return this;
 }
 
@@ -118,7 +132,10 @@ MyClass & MyClass::operator =(MyClass && m)
     this->m_pData = nullptr;
     this->m_pData = std::move(m.m_pData);
     m.m_pData = nullptr;
-    std::cout << "默认重载移动赋值操作符函数" << " this addr: " << this << std::endl;
+    std::cout << "默认重载移动赋值操作符函数" 
+              << " this addr: " 
+              << this << std::endl;
+
     return *this;
 }
 
@@ -170,9 +187,7 @@ void mytest(void)
 int main(int argc, char * argv[], char * envp[])
 {
     mytest();
-
     system("pause");
+
     return 0;
 }
-
-
