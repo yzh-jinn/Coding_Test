@@ -10,14 +10,30 @@
 class MyClass
 {
 public:
-    MyClass(const char * str = nullptr);  // 默认带参构造函数 // 默认构造函数指不带参数或者所有参数都有缺省值的构造函数
-    ~MyClass(void);  // 默认析构函数
-    MyClass(const MyClass &);  // 默认拷贝构造函数
-    MyClass & operator =(const MyClass &);  // 默认重载赋值运算符函数
-    MyClass * operator &();  // 默认重载取址运算符函数
-    MyClass const * operator &() const;  // 默认重载取址运算符const函数
-    MyClass(MyClass &&);  // 默认移动构造函数
-    MyClass & operator =(MyClass &&);  // 默认重载移动赋值操作符函数
+    MyClass(const char * str = nullptr);  
+    // 默认带参构造函数 
+    // 默认构造函数指不带参数或者所有参数都有缺省值的构造函数
+    
+    ~MyClass(void);  
+    // 默认析构函数
+    
+    MyClass(const MyClass &);  
+    // 默认拷贝构造函数
+    
+    MyClass & operator =(const MyClass &);  
+    // 默认重载赋值运算符函数
+    
+    MyClass * operator &();  
+    // 默认重载取址运算符函数
+    
+    MyClass const * operator &() const;  
+    // 默认重载取址运算符const函数
+    
+    MyClass(MyClass &&);  
+    // 默认移动构造函数
+    
+    MyClass & operator =(MyClass &&);  
+    // 默认重载移动赋值操作符函数
 
 private:
     char *m_pData;
