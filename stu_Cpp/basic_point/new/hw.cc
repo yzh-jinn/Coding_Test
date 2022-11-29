@@ -11,7 +11,6 @@ void arr(int a[]){
 }
 
 int main (void) {
-
     int a[] = {10,20,30,40,50};
     arr(a);
     printf("%lu\n",sizeof(a)/sizeof(int));
