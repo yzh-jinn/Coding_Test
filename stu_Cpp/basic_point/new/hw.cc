@@ -18,13 +18,13 @@ public:
         cout << _name << endl;
     }
 
-    void changeWord(){
+    void changeWords(char* changeWords){
  
         cout << "Input your Word : " << endl;
         //char *new_word = nullptr;
-        //cin >> new_word;
+        cin >> changeWords;
 
-        strcpy_s(_name, "Good");
+        strcpy(_name, changeWords);
         
         cout << "This is your new Word : " << _name << endl;
 
@@ -32,8 +32,8 @@ public:
      }
 
 private:
+    char* _name = nullptr; //(char*)malloc(sizeof(char))
     int _age = 10;
-    char* _name = nullptr; //(char*)malloc(sizeof(char)); 
 };
 
 
@@ -41,7 +41,8 @@ int main (void) {
     A a(11, "Happy Good Day!");
     a.show();
     cout << "-------" << endl;
-    a.changeWord();
+    char* changeWords = "GoodBoy";
+    a.changeWords(changeWords);
     a.show();
 
     return 0;
