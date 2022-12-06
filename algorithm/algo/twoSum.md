@@ -19,6 +19,8 @@
 - 核心思考点：
     > Left + Right ? Target \
         左右指针相加的和与 Target 的关系。
+
+### 自己的代码(12ms)
 ```cpp
 
 class Solution {
@@ -39,23 +41,25 @@ public:
         }
         return vector<int>{-1, -1};
     }
-        
-        /*
-            先判断首尾 left, right 的值和目标值 target 的关系。
-            1. sum > target ?
-                 //将数值范围缩小
-                 right(最大) + left(最小) > target
-                 left ++  //思考为什么？
-
-            2. sum < target ?
-                 //将数值范围扩大
-                 right(最大) + left(最小) < target
-                 right --
-        */
 };
 
 ```
 
-### 代码实例（4ms）
-![截图](~/Documents/Screen_Shot/iShot_2022-12-06_21.45.59.jpg "hello")
-
+### 优秀代码实例（4ms）
+```cpp
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& numbers, int target) {
+        int l=0, r=numbers.size()-1;
+        while(l<r){
+            if(numbers[l]+numbers[r]==target){
+                vector<int> ans;
+                ans.push_back(l+1),ans.push_back(r+1);
+                return ans;
+            }else if(numbers[l]+numbers[r]<target) l++;
+            else r--;
+        }
+        return {};
+    }
+};
+```
