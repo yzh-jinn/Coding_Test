@@ -14,8 +14,10 @@ void initTest(test *t){
 }
 
 int main (void) {
-    test *t1 = (test*)calloc(SIZE, sizeof(test));
+//    test *t1 = (test*)calloc(SIZE, sizeof(test));
+    test *t1 = (test*)malloc(SIZE*sizeof(test));
     initTest(t1);
 
+ 
     return 0;
 }
