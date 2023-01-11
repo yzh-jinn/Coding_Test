@@ -12,7 +12,7 @@ typedef struct dCirLL{
 
 //创建头结点
 //创建链表节点
-
+asdfasdfa
 int main (void) {
     
     return 0;
