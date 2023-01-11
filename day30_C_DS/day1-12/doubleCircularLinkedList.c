@@ -10,7 +10,8 @@ typedef struct dCirLL{
     struct dCirLL *next;
 }dcLink;
 
-//
+//创建头结点
+//创建链表节点
 
 int main (void) {
     
