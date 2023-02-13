@@ -1,8 +1,11 @@
+#1. 现在Shell执行 echo $TERM
+#2. 看看得到了什么，比如 “xterm” 或者 “Xterm-256color”
+
 #if it's UbuntuOS:
-set -g default-terminal "xterm"
+set -g default-terminal "xterm-256color"
 
 #Or if it's MacOS:
-#set -g default-terminal "screen-256color"
+#set -g default-terminal "screen-256color" 👆
 
 set -g prefix C-q
 unbind C-b
@@ -116,8 +119,14 @@ CPU:#{cpu_percentage}|GPU:#{gpu_percentage}|\
 #{sysstat_loadavg}|\
 %H:%M Jinn "
 
+# 显示当前主机是否联网（以连通百度为标准）
+set -g @plugin 'tmux-plugins/tmux-online-status'
+# 如果图标不显示则用下面两个代替
+set -g @online_icon "✅"
+set -g @offline_icon "✘"
+set -g status-right "#{online_status}"
 set -g @plugin 'tmux-plugins/tmux-battery'
 
-
+#主要配置在这里：
 set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s
-#{sysstat_mem} | #{sysstat_cpu} | BAT: #{battery_percentage}% \s %H:%M vz_Jinn "
+#{sysstat_mem} | #{sysstat_cpu} | BAT: #{battery_percentage}% | Online: #{online_status} \s %h-%d | %a | %H:%M vz_Jinn "
