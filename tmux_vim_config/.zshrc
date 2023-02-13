@@ -82,8 +82,18 @@ plugins=(
 #Aliases ---------
 alias cat='batcat'
 alias tmux="TERM=screen-256color-bce tmux"
+
+
 #Aliases ---------
 
+
+#整合zsh与Tmux，同时启动
+#===============================================================================================
+if command -v tmux &> /dev/null; then
+  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
+fi
+
+#===============================================================================================
 
 source $ZSH/oh-my-zsh.sh
 export PATH="$HOME/.cargo/bin:$PATH"
