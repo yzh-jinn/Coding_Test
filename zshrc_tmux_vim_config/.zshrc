@@ -1,25 +1,39 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+# ^^^^^^^^^^^^^^
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+#^^^^^^^^^^^^^^^
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# Path to your oh-my-zsh installation.
+# ^^^^^^^^^^
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+#^^^^^^^^^^^^^^^
+#Path to your oh-my-zsh installation.
+export PATH=/opt/homebrew/bin/:$PATH
 export ZSH="$HOME/.oh-my-zsh"
+#^^^^^^^^^^^^
 
+#
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ---------主题----------
-
+#^^^^^^^^^^^^^
 ZSH_THEME="random"
-#ZSH_THEME="agnoster" //这两个都是我喜欢的
-#ZSH_THEME="af-magic"
-#-----------------------
+#^^^^^^^^^^^^^
+#POWERLEVEL10K_MODE='nerdfont-complete'
+#ZSH_THEME="powerlevel10k/powerlevel10k"
+
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
-
+# ^^^^^^^^^^^^^
+ZSH_THEME_RANDOM_CANDIDATES=( "af-magic" "agnoster" )
+#^^^^^^^^^^^^^^
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -45,13 +59,13 @@ ZSH_THEME="random"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
 # e.g. COMPLETION_WAITING_DOTS="%F{yellow}waiting...%f"
 # Caution: this setting can cause issues with multiline prompts in zsh < 5.7.1 (see #5765)
-COMPLETION_WAITING_DOTS="true"
+# COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -74,32 +88,44 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+# ^^^^^^^^^^^^^
 plugins=(
-    git 
-    extract 
-    autojump 
-    zsh-autosuggestions 
-    zsh-syntax-highlighting
-)
+        
+        git
+        zsh-syntax-highlighting
+        zsh-autosuggestions
+        autojump
+        fzf
 
-#Aliases ---------
-alias cat='batcat'
+        )
+# ^^^^^^^^^^^^^
+#=====================
 alias tmux="TERM=screen-256color-bce tmux"
+alias cat="bat --theme=ansi"
+alias tree="tree -C"
+#
+#
+#
+##=====================
+#
+source $HOME/.cargo/env
+#source /Users/jinn/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source /Users/jinn/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# 高亮文件和目录
+#export LS_COLORS='di=1;36:fi=0:ln=1;33:pi=5;37;41:so=5;37;44:bd=5;37;45:cd=5;37;43:or=5;30;47:ex=1;32'
 
-#Aliases ---------
+# 只高亮目录
+#export LS_COLORS='di=1;36'
 
+# 高亮不同类型的文件
+#export LS_COLORS='di=1;36:fi=0:ln=1;33:*.txt=1;32:*.md=1;35:*.jpg=1;31:*.png=1;31:*.gif=1;31:*.py=1;34'
 
-#整合zsh与Tmux，同时启动
-#===============================================================================================
-if command -v tmux &> /dev/null; then
-  [[ ! $TERM =~ screen ]] && [ -z $TMUX ] && tmux
-fi
+#^^^^^^^^^^^^^^^^^^
+source ~/.oh-my-zsh/oh-my-zsh.sh
+#^^^^^^^^^^^^^^^^^^
 
-#===============================================================================================
-
-source $ZSH/oh-my-zsh.sh
-export PATH="$HOME/.cargo/bin:$PATH"
+#source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -126,3 +152,11 @@ export PATH="$HOME/.cargo/bin:$PATH"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+#eval "$(starship init zsh)"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
