@@ -5,7 +5,7 @@
 
 int main (int argc, char *argv[]) {
     if( argc != 4 ) {
-        printf( "Usage: %s [-a | -s | -m | -d] first_data second_data\n ", argv[0] );
+        printf( "Usage: %s [-a | -s | -m | -d] first_data second_data\n", argv[0] );
         return 0;
     }
     int x = atoi (argv[2]);
@@ -28,7 +28,7 @@ int main (int argc, char *argv[]) {
     }
 
     else {   
-        printf( "Usage: %s [-a | -s | -m | -d] first_data second_data\n ", argv[0] );
+        printf( "Usage: %s [-a | -s | -m | -d] first_data second_data\n", argv[0] );
         return 0;
     }
 
