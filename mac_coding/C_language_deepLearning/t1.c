@@ -1,7 +1,9 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include "t1.h"
 
-int main (void) {
 
-    return 0;
-}
+int g_val = 10;
+
+void function(void) 
+{
+    printf("hello\n");
+} 
