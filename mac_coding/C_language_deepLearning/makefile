@@ -41,13 +41,13 @@ Warning = -Wall -g
 #$(Target) : $(Files)
 #	$(Compiler)	$(Warning) $^ -o $@
 $(Target) : $(ob_Files)
-	$(Compiler) $^ -o $@ $(Warning)
+	@$(Compiler) $^ -o $@ $(Warning)
 %.o : %.c
-	$(Compiler) $^ -c -o $@ $(Warning)
+	@$(Compiler) $^ -c -o $@ $(Warning)
 
 .PHONY : oclean cclean
 oclean :
-	rm -f *.o $(Target)
+	@rm -f *.o $(Target)
 
 cclean :
-	rm -f *.c $(Target)
+	@rm -f *.c $(Target)
