@@ -17,3 +17,12 @@ int add_one_to_ten(void) {
         }
     return sum;
 }
+//计算10以内整数加法的和的函数
+int add_one_to_ten2(void) {
+    int sum = 0;
+    for (int i = 1; i <= 10; i++) {
+        sum += i;
+    }
+    return sum;
+}
+
