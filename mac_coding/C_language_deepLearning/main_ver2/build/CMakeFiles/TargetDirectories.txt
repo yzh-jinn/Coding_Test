@@ -1,3 +1,0 @@
-/Users/jinn/coding_jinn_test/mac_coding/C_language_deepLearning/main_ver2/build/CMakeFiles/new_main.dir
-/Users/jinn/coding_jinn_test/mac_coding/C_language_deepLearning/main_ver2/build/CMakeFiles/edit_cache.dir
-/Users/jinn/coding_jinn_test/mac_coding/C_language_deepLearning/main_ver2/build/CMakeFiles/rebuild_cache.dir
