@@ -1,12 +1,16 @@
 {
     "editor.fontFamily": "Consolas, 'JetBrains Mono', monospace, Hack Nerd Font Mono",
-    "aicursor.openaiApiKey": "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",
-    "aicursor.model": "gpt-4",
     "WisenTranslate.disableHover": false,
-    "workbench.colorTheme": "Tomorrow Night Blue",
     "workbench.preferredDarkColorTheme": "Tomorrow Night Blue",
     "workbench.preferredHighContrastColorTheme": "Tomorrow Night Blue",
-    "workbench.preferredHighContrastLightColorTheme": "G Dark-light (Glitter)",
-    "workbench.preferredLightColorTheme": "G Dark-light (Glitter)",
-    "editor.fontSize": 15
+    "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
+    "workbench.preferredLightColorTheme": "Default High Contrast Light",
+    "editor.fontSize": 15,
+    "window.autoDetectColorScheme": false,
+    "workbench.colorCustomizations": {},
+    "editor.tokenColorCustomizations": {},
+    "editor.semanticTokenColorCustomizations": {},
+    "themeswitch.toggleDefaultDark": true,
+    "themeswitch.priority": 0,
+    "workbench.iconTheme": "vscode-icons-mac",
 }
