@@ -16,6 +16,9 @@ int main (void)
     int g = add_one_to_ten();
     printf("%d\n",g );
 
+    int ap[] = { 10, 20, 30 };
+    printf("%p\n", a+1);
+
     return 0;
 
 }
