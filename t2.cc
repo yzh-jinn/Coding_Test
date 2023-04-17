@@ -1,4 +1,17 @@
 #include<iostream>
-using namespace std;
 
-//计算1到10的所有整数和
+static void fun ()
+{
+    static int i = 0;
+    i++;
+    printf("i = %d, &i = [%p]\n", i, &i);
+}
+
+int main (void) 
+{
+    for (int i = 0; i < 10; i++) {
+        fun();
+    }
+
+    return 0;
+} 

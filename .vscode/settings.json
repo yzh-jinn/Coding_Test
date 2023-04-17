@@ -16,4 +16,6 @@
     "themeswitch.priority": 0,
     "window.autoDetectColorScheme": false,
     "terminal.integrated.macOptionClickForcesSelection": true,
+    "aicursor.openaiApiKey": "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",
+    "aicursor.model": "gpt-3.5-turbo",
 }
