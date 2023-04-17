@@ -15,4 +15,5 @@
     "themeswitch.toggleDefaultDark": true,
     "themeswitch.priority": 0,
     "window.autoDetectColorScheme": false,
+    "terminal.integrated.macOptionClickForcesSelection": true,
 }
