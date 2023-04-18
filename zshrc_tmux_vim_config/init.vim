@@ -15,6 +15,8 @@ Plug 'marcopaganini/termschool-vim-theme'
 Plug 'arcticicestudio/nord-vim'
 Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/taglist.vim'
 
 call plug#end()
 "====================================================="
@@ -207,3 +209,26 @@ set background = "dark"
 "  set guifont=Powerline_Consolas:h14:cANSI
 
 "======================AirLine Setting=========================
+"
+"" 使用NERDTree插件查看工程文件。设置快捷键
+nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+" 设置忽略的文件
+let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '\.d$', '\.a$', '\.out$', '\.tgz$']
+"
+"在VIM启动时自动开启NerdTree
+"autocmd VimEnter * NERDTree
+"
+
+" 使用TlistToggle查看文件函数列表。设置快捷键：<F12>
+nnoremap  <Leader>m  :TlistToggle <CR> 
+" 粘贴到系统剪切板
+"map <Leader>y "*y
+"禁止自动改变当前Vim窗口的大小
+let Tlist_Inc_Winwidth=0
+"把方法列表放在屏幕的右侧
+let Tlist_Use_Right_Window=1
+"let Tlist_Use_Left_Window=0
+"让当前不被编辑的文件的方法列表自动折叠起来
+let Tlist_File_Fold_Auto_Close=1
