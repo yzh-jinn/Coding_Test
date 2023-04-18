@@ -2,7 +2,6 @@
 
 int main (void) {
     
-    
     double i = 3.123456789;
     std::cout << i << std::endl;
     

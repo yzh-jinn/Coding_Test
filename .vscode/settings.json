@@ -2,7 +2,7 @@
     "explorer.confirmDelete": false,
     "extensions.ignoreRecommendations": true,
     "editor.semanticTokenColorCustomizations": {},
-    "terminal.integrated.defaultProfile.osx": "tmux",
+    "terminal.integrated.defaultProfile.osx": "zsh",
     "workbench.preferredDarkColorTheme": "Tomorrow Night Blue",
     "workbench.preferredHighContrastColorTheme": "Tomorrow Night Blue",
     "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",

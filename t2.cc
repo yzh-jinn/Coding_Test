@@ -1,16 +1,17 @@
 #include<iostream>
 
-static void fun ()
+
+static void fun (static int a)
 {
-    static int i = 0;
-    i++;
-    printf("i = %d, &i = [%p]\n", i, &i);
+    a = 0;
+    a++;
+    printf("i = %d, &i = [%p]\n", a, &a);
 }
 
 int main (void) 
 {
     for (int i = 0; i < 10; i++) {
-        fun();
+        fun(i);
     }
 
     return 0;
