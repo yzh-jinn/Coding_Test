@@ -1,18 +1,17 @@
 #include<iostream>
 
+void func(unsigned int a, int b) {
 
-static void fun (static int a)
-{
-    a = 0;
-    a++;
-    printf("i = %d, &i = [%p]\n", a, &a);
+	printf("you inputed : %u , %u", a, b);
+
 }
 
-int main (void) 
-{
-    for (int i = 0; i < 10; i++) {
-        fun(i);
-    }
+int main (void) {
 
-    return 0;
-} 
+    unsigned int a = -10;
+	int b = 20;
+
+    func (a, b);
+
+    return 0 ;
+}

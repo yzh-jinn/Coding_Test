@@ -8,7 +8,7 @@
     "workbench.preferredHighContrastLightColorTheme": "Default High Contrast Light",
     "workbench.preferredLightColorTheme": "Default High Contrast Light",
     "editor.fontFamily": "Menlo, Monaco, 'Courier New', monospace, Hack Nerd Font Mono",
-    "editor.fontSize": 15,
+    "editor.fontSize": 14,
     "workbench.colorCustomizations": {},
     "workbench.iconTheme": "vscode-icons-mac",
     "vsicons.dontShowNewVersionMessage": true,
@@ -18,4 +18,5 @@
     "terminal.integrated.macOptionClickForcesSelection": true,
     "aicursor.openaiApiKey": "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",
     "aicursor.model": "gpt-3.5-turbo",
+    "code-runner.runInTerminal": true,
 }
