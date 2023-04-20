@@ -11,7 +11,8 @@ int main (void) {
     unsigned int a = -10;
 	int b = 20;
 
-    func (a, b);
+	func(a, b);
+
 
     return 0 ;
 }

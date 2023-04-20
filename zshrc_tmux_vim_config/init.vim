@@ -104,13 +104,6 @@ map <C-j> :resize +5<CR>
 
 "==== COC按键
 " 将Ctrl-y的功能更改为Plug的Enter键
-"nmap <Plug>(coc-cursors-select-next) <Plug>(coc-cursors-select)
-"nmap <Plug>(coc-cursors-select-previous) <Plug>(coc-cursors-select)
-"nmap <Plug>(coc-cursors-select-next-column) <Plug>(coc-cursors-select)
-"nmap <Plug>(coc-cursors-select-previous-column) <Plug>(coc-cursors-select)
-"nmap <Plug>(coc-cursors-select-all) <Plug>(coc-cursors-select)
-"nmap <Plug>(coc-cursors-select-reset) <Plug>(coc-cursors-select)
-"nmap <CR> <Plug>(coc-cursors-select)
 inoremap <expr> <CR> pumvisible() ? "\<Plug>confirm_completion" : "\<CR>"
 
 " 设置 <Enter> 作为确认自动完成菜单的快捷键
