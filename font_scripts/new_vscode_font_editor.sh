@@ -1,5 +1,6 @@
 #!/bin/bash
-
+# 安装vscode之后，直接运行这个脚本。
+# 作用： 下载并修正 VScode 的字体
 # 获取当前系统字体
 current_font="$(defaults read -g NSGlobalDomain 'AppleFontSmoothing' 2>/dev/null | awk '{print ($1 == "0" ? "Menlo" : "Monaco")}')"
 
