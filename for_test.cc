@@ -12,7 +12,7 @@ int main (void) {
 	int b = 20;
 	
 	func(a, b);
-
+	funb;
 
     return 0 ;
 }
