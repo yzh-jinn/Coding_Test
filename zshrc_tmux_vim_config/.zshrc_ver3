@@ -147,7 +147,20 @@ alias mac="neofetch"
 #alias ll="exa -l"
 #alias mysql="mycli"
 alias vim="nvim"
-#
+
+# git function    
+function gacp() {    
+  if [ "$#" -eq 0 ]; then    
+    echo "Please provide commit message"    
+    return 1    
+  fi    
+  git add .    
+  git commit -m "$*"    
+  git push    
+}    
+    
+alias gacp='gacp'
+
 ##=====================
 #
 source $HOME/.cargo/env
