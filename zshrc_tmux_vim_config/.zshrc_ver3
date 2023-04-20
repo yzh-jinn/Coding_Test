@@ -202,3 +202,13 @@ source ~/.oh-my-zsh/oh-my-zsh.sh
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# 关闭ZSH前会先执行 git push 的命令,然后再关闭    
+function exit_zsh() {    
+  git add .    
+  git commit -m "updated"    
+  git push    
+  exit    
+}    
+    
+trap 'exit_zsh' EXIT 
