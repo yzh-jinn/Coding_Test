@@ -10,8 +10,9 @@ int main (void) {
 
     unsigned int a = -10;
 	int b = 20;
-
-	func(a, b);
+	int c = 1008;
+	
+	func(a, c);
 
 
     return 0 ;
