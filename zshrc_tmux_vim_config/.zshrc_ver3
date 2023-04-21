@@ -149,7 +149,7 @@ alias mac="neofetch"
 alias vim="nvim"
 
 # git function    
-function gacp() {    
+function gdo() {    
   if [ "$#" -eq 0 ]; then    
     echo "Please provide commit message"    
     return 1    
@@ -159,7 +159,7 @@ function gacp() {
   git push    
 }    
     
-alias gacp='gacp'
+alias gdo='gdo'
 
 ##=====================
 #
