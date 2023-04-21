@@ -19,7 +19,7 @@
 
 void func () {
 
-	unsigned int a = 20u;
+	unsigned int a = -20u;
 	for (a = 9; a >= 0; a--){
 		printf("%d\n", a);
 	}
