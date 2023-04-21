@@ -19,9 +19,9 @@
 
 void func () {
 
-	unsigned int a = -20u;
-	for (a = 9; a >= 0; a--){
-		printf("%d\n", a);
+	unsigned int b = -20u;
+	for (b = 9; b >= 0; b--){
+		printf("%d\n", b);
 	}
 
 }
