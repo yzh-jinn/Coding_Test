@@ -28,5 +28,7 @@ void func () {
 
 int main (void) {
 	func();
+	const char *str = "hello";
+
 	return 0;
 }
