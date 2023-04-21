@@ -6,7 +6,7 @@
 
 // }
 
-// int main (void) {
+// int main (void) {˜
 
 //     unsigned int a = -10;
 // 	int b = 20;
@@ -19,7 +19,7 @@
 
 void func () {
 
-	unsigned int a;
+	unsigned int a = 20u;
 	for (a = 9; a >= 0; a--){
 		printf("%d\n", a);
 	}
