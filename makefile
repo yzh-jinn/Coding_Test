@@ -6,6 +6,8 @@ Warning = -Wall -g
 $(Target): $(Src)
 	@$(Compiler) $(Src) -o $(Target)
 	
-.PHONY : clean
-clean :
+.PHONY : c .
+c :
 	@rm -f $(Target)
+. :
+	@./$(Target)
