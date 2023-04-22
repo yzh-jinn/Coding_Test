@@ -21,7 +21,7 @@ int main (void) {
 			case 2:
 				printf("day %d\n", m);
 				break;
-			default:
+			case 3:
 				static int count = 0;
 				count++;
 				if(count >= 5){
@@ -29,11 +29,13 @@ int main (void) {
 					return 0;
 				}
 				printf("failed!\n");
+				break;
+			default:
+				printf("you wrong!\n");
+				break;
 		}
-
 	}
 	
 	return 0;
 
 }
-
