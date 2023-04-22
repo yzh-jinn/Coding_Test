@@ -153,4 +153,5 @@ set -g @plugin 'tmux-plugins/tmux-battery'
 #主要配置在这里：
 #set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s #{sysstat_mem} | #{sysstat_cpu} | BAT:#[fg=red,bold] #{battery_percentage}% #[fg=white,bold]| Online: #{online_status} \s #[fg=yellow,bold]%h_%d #[fg=white]| #[fg=red,bold]%a #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
 
-set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s #{sysstat_mem} | BAT:#[fg=red,bold] #{battery_percentage}% #[fg=white,bold]| Online: #{online_status} \s #[fg=yellow,bold]%h/%d #[fg=white]| #[fg=red,bold] 周%a #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
+#set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s #{sysstat_mem} | BAT:#[fg=red,bold] #{battery_percentage}% #[fg=white,bold]| Online: #{online_status} \s #[fg=yellow,bold]%h/%d #[fg=white]| #[fg=red,bold] 周%a #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
+set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s #{sysstat_mem} | BAT:#[fg=red,bold] #{battery_percentage}% #[fg=white,bold]| Online: #{online_status} \s #[fg=yellow,bold] Date: %Y%h/%d #[fg=white]| #[fg=red,bold] Days: %a  #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
