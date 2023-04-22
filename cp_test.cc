@@ -15,7 +15,11 @@ int main (void) {
 	int m = 0;
 	int count = 0;
 	while(1) {
-		scanf("%d", &m);
+		int ret = scanf("%d", &m);
+		if(ret !=1 ) {
+			printf("uinvlid!\n");
+			continue;
+		}
 		switch(m){
 			case 1:
 				printf("day %d\n", m);
