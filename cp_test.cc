@@ -13,7 +13,7 @@ int main (void) {
 	
 	printf("Input sth: \n");
 	int m = 0;
-	int count = 0;
+//	int count = 0;
 	while(1) {
 		int ret = scanf("%d", &m);
 		if(ret !=1 ) {
@@ -30,7 +30,7 @@ int main (void) {
 				printf("day %d\n", m);
 				break;
 			default:
-//				static int count = 0;
+				static int count = 0;
 				count++;
 				if(count >= 5){
 					printf("are you kidding me!\n");
