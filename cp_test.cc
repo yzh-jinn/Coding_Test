@@ -17,8 +17,10 @@ int main (void) {
 	while(1) {
 		int ret = scanf("%d", &m);
 		if(ret !=1 ) {
-			printf("uinvlid!\n");
-			continue;
+			printf("invalid!\n");
+			int c;
+            while((c = getchar()) != '\n' && c != EOF);
+            continue;
 		}
 		switch(m){
 			case 1:
