@@ -1,15 +1,7 @@
 #include<stdio.h>
-#include<float.h>
-#include<math.h>
 
-typedef struct stu{
-	int age;
-	const char *name;
-}stu;
 
 int main (void) {
-	stu a = {12, "Bob"};
-	stu b = {25, "Merry"};
 	
 	printf("Input sth: \n");
 	int m = 0;
