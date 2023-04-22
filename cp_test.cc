@@ -1,15 +1,41 @@
-#include<iostream>
+#include<stdio.h>
 #include<float.h>
 #include<math.h>
 
+typedef struct stu{
+	int age;
+	const char *name;
+}stu;
 
 int main (void) {
+	stu a = {12, "Bob"};
+	stu b = {25, "Merry"};
 	
-	int a = (int)3.14;
-	printf("%d\n",a);
-	printf("%f\n",a);
+	printf("Input sth: \n");
+	int m = 0;
+	int count = 0;
+	while(1) {
+		scanf("%d", &m);
+		switch(m){
+			case 1:
+				printf("day %d\n", m);
+				break;
+			case 2:
+				printf("day %d\n", m);
+				break;
+			default:
+//				static int count = 0;
+				count++;
+				if(count >= 5){
+					printf("are you kidding me!\n");
+					return 0;
+				}
+				printf("failed!\n");
+		}
 
-
+	}
+	
 	return 0;
+
 }
 
