@@ -5,14 +5,10 @@
 
 int main (void) {
 	
-	double x = 0.0;
+	int a = (int)3.14;
+	printf("%d\n",a);
+	printf("%f\n",a);
 
-	if (fabs(x) < DBL_EPSILON ) {
-	    printf("this is true result!");
-	}
-	else {
-		printf("oooops!");
-	}
 
 	return 0;
 }
