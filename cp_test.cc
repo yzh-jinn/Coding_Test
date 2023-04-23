@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include<math.h>
 
 
 int main (void) {
@@ -6,7 +7,8 @@ int main (void) {
 	printf("Input sth: \n");
 	int m = 0;
 //	int count = 0;
-	while(1) {
+	int quit = 1;
+	while(quit) {
 		int ret = scanf("%d", &m);
 		if(ret !=1 ) {
 			printf("invalid!\n");
@@ -26,15 +28,17 @@ int main (void) {
 				count++;
 				if(count >= 5){
 					printf("are you kidding me!\n");
-					return 0;
+//					return 0;
+					quit = 0;
 				}
-				printf("failed!\n");
+				printf("input again\n");
 				break;
 			default:
 				printf("you wrong!\n");
 				break;
 		}
 	}
+	printf("run it again!\n");
 	
 	return 0;
 
