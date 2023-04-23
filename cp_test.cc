@@ -2,13 +2,14 @@
 #include<math.h>
 
 
+
 int main (void) {
 	
 	printf("Input sth: \n");
 	int m = 0;
 //	int count = 0;
-	int quit = 1;
-	while(quit) {
+	int quit = 0;
+	while(!quit) {
 		int ret = scanf("%d", &m);
 		if(ret !=1 ) {
 			printf("invalid!\n");
@@ -29,7 +30,7 @@ int main (void) {
 				if(count >= 5){
 					printf("are you kidding me!\n");
 //					return 0;
-					quit = 0;
+					quit = 1;
 				}
 				printf("input again\n");
 				break;
