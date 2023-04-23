@@ -1,30 +1,31 @@
 #include<stdio.h>
-#include<math.h>
+
 
 
 
 int main (void) {
 	
 	printf("Input sth: \n");
-	int m = 0;
+//	int m = 0;
+	char s = NULL;
 //	int count = 0;
 	int quit = 0;
 	while(!quit) {
-		int ret = scanf("%d", &m);
+		int ret = scanf("%c", &s);
 		if(ret !=1 ) {
 			printf("invalid!\n");
 			int c;
             while((c = getchar()) != '\n' && c != EOF);
             continue;
 		}
-		switch(m){
-			case 1:
-				printf("day %d\n", m);
+		switch(s){
+			case 'A':
+				printf("day %c\n", s);
 				break;
-			case 2:
-				printf("day %d\n", m);
+			case 'B':
+				printf("day %c\n", s);
 				break;
-			case 3:
+			case 'C':
 				static int count = 0;
 				count++;
 				if(count >= 5){
