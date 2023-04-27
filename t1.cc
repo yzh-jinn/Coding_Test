@@ -3,8 +3,6 @@
 
 int main (void) {
 
-	char *p = "hello\n";
-	*p = 'h';
 
 	return 0;
 
