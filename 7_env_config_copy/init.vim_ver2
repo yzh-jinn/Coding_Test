@@ -17,6 +17,7 @@ Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'vim-scripts/taglist.vim'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()
 "====================================================="
