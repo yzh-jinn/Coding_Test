@@ -9,12 +9,18 @@ const int * getVal() {
 }
 
 
+void fun( const int num,  const int *num_2) {
+    printf("this is a number a : %d" ,num);
+    printf("this is a number b : %d" ,num);
+
+    //int *op = num_2 + 1 ;
+}
+
 int main (void) {
-	cosnt int *p = getVal();
+    int a = 10;
+    const int *p = &a;
 
+    fun(a, p);
 
-
-
-	return 0;
-
-} 
+    return 0;
+}
