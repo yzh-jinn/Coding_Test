@@ -1,8 +1,7 @@
 #include<stdio.h>
 #include<unistd.h>
 
-int pass = 1;
-
+volatile int pass = 1;
 
 int main (void) {
 
