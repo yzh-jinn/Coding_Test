@@ -1,13 +1,19 @@
 #include<stdio.h>
 #include<unistd.h>
+#include<string.h>
+#define NUM 20
+#include <stdio.h>
 
-volatile int pass = 1;
+int main() {
+    union {
+        int i;
+        char c;
+    } u;
 
-int main (void) {
+    u.i = 78;
+	printf("%d\n", u.i);
+	printf("%c\n", u.c);
 
-	while(pass) {
-
-	}
-
-	return 0;
+    return 0;
 }
+
