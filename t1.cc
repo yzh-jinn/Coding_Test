@@ -1,19 +1,16 @@
 #include<stdio.h>
-#include<unistd.h>
-#include<string.h>
-#define NUM 20
-#include <stdio.h>
+
+enum COLOR {
+    RED, //默认编号：0
+    YELLOW, //编号：1
+    BLACK = 202,//编号：202
+    GREEN,//编号：203
+    BLUE = -10,//编号：-10
+    PINK, //编号：-9
+};
 
 int main() {
-    union {
-        int i;
-        char c;
-    } u;
-
-    u.i = 78;
-	printf("%d\n", u.i);
-	printf("%c\n", u.c);
-
-    return 0;
+	printf("%d\n", GREEN);
+	return 0;
 }
 
