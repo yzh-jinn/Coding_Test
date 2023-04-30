@@ -1,16 +1,14 @@
 #include<stdio.h>
 
-enum COLOR {
-    RED, //默认编号：0
-    YELLOW, //编号：1
-    BLACK = 202,//编号：202
-    GREEN,//编号：203
-    BLUE = -10,//编号：-10
-    PINK, //编号：-9
-};
+typedef int arr[10];
 
-int main() {
-	printf("%d\n", GREEN);
+
+
+int main (void) {
+	arr b = { 1, 2, 4, 5, 1, 2, 4, 1, 2, 99};
+	for (int i = 0; i < 10; i++) {
+		printf("print:%d\n",b[i]);
+	}
+
 	return 0;
 }
-
