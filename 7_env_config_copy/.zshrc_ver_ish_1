@@ -72,7 +72,33 @@ if command -v tmux &> /dev/null; then
 #eval "$(starship init zsh)"
 #eval "$(command /usr/bin/starship init zsh)"
 
-function exit_zsh() {
 
+# 关闭ZSH前会先执行 git push 的命令,然后再关闭    
+# 可追加指定目录:  || $(git rev-parse --show-toplevel 2>/dev/null) =~ "$HOME/my_a" || $(git rev-parse --show-toplevel 2>/dev/null) =~ "$HOME/jinn/my_b"     
 
+function exit_zsh() {    
+  if [[ $(git rev-parse --show-toplevel 2>/dev/null) =~ "$HOME/coding_jinn_test" ]]; then    
+    git add .    
+    git commit -m "updated"    
+    git push    
+  fi    
+  exit    
 }
+    
+trap 'exit_zsh' EXIT  
+
+
+#======git push function
+# git function    
+function gdo() {    
+  if [ "$#" -eq 0 ]; then    
+    echo "Please provide commit message"    
+    return 1    
+  fi    
+  git add .    
+  git commit -m "$*"    
+  git push    
+}    
+    
+alias gdo='gdo'
+
