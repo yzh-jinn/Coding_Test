@@ -7,10 +7,13 @@ int show () {
 
 
  int main (void) {
- 	char a = 'A';
- 	char b = 0;
- 	printf("%d\n",a);
- 	printf("%d\n",b);
+	int get_v = 0;
+	
+	while(1) {
+		scanf("%d", &get_v);
+		get_v && show();
 
+	}
+	
 	return 0;
 }
