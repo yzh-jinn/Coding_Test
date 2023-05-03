@@ -1,0 +1,318 @@
+"===================================================="
+call plug#begin('~/.config/nvim/plugged/')
+
+Plug 'ghifarit53/tokyonight-vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'akinsho/bufferline.nvim'
+Plug 'mhinz/vim-startify'
+Plug 'liuchengxu/space-vim-theme'
+Plug 'vim-airline/vim-airline'
+Plug 'connorholyday/vim-snazzy'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'mhinz/vim-startify'
+Plug 'cocopon/iceberg.vim'
+Plug 'marcopaganini/termschool-vim-theme'
+Plug 'arcticicestudio/nord-vim'
+Plug 'embark-theme/vim', { 'as': 'embark', 'branch': 'main' }
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'preservim/nerdtree'
+Plug 'vim-scripts/taglist.vim'
+Plug 'ryanoasis/vim-devicons'
+Plug 'gko/vim-coloresque'
+Plug 'will133/vim-dirdiff'
+Plug 'https://github.com/preservim/tagbar'
+"Plug 'https://github.com/sheerun/vim-polyglot'
+"Plug 'https://github.com/anuvyklack/pretty-fold.nvim'
+
+call plug#end()
+"====================================================="
+set smarttab
+set tabstop=4
+set shiftwidth=4
+
+set softtabstop=0       " 关闭softtabstop 永远不要将空格和tab混合输入
+set ruler
+set magic
+
+set clipboard=unnamed  "共享剪贴板
+
+set autoindent
+set smartindent
+let mapleader = ";"     "让<leader> 变成空格,可以试试用；代替
+syntax on
+set backspace=indent,eol,start
+set softtabstop=4
+set wrap                " 让行不超过当前的窗口限定
+set wildmenu            "命令模式下可以补全命令
+set incsearch           "边输入边高亮
+set ignorecase          "忽略大小写
+set smartcase           "智能识别大小写
+set scrolloff=5         "永远让最底下显示5行内容
+set encoding=utf-8
+set number
+set foldenable
+set foldmethod=manual
+set foldmethod=syntax
+"修改键位，使用空格键打开函数
+:nnoremap <space> za
+:nnoremap <leader><space> zn
+"取消亮背景色
+"highlight Folded guibg=NONE ctermbg=NONE
+
+"=====折叠相关内容：
+"za 打开/关闭当前折叠
+"zc 关闭当前打开的折叠
+"zo 打开当前的折叠
+"zm 关闭所有折叠
+"zM 关闭所有折叠及嵌套的折叠
+"zr 打开
+"zR 打开所有
+"zj 移动到下一个折叠
+"zk 移动到上一个折叠
+"zn 禁用折叠
+"zN 启用折叠
+":mkview 保存当前折叠状态
+":loadview 载入折叠信息
+":nnoremap <leader>f zn<CR>
+":nnoremap <leader>F zN<CR>
+
+set showmatch  " 高亮显示匹配的括号
+
+"let g:Tlist_Ctags_Cmd='/usr/bin/ctags'
+
+"Error resolve: You need to do 'brew install ctags' first
+let g:Tlist_Ctags_Cmd='/opt/homebrew/bin/ctags'
+
+
+
+"=======================================键位修改（Emacs 相同键位）=======================================
+imap<C-f>  <Right>
+imap<C-p>  <Up>
+imap<C-n>  <Down>
+imap<C-b>  <Left>
+imap<C-a>  <Home>
+imap<C-e>  <End>
+imap<C-d>  <Delete>
+imap<C-h>  <Backspace>
+imap<LEADER>w <Esc><Right>
+imap<C-k>  <Esc><Right>v<End><Left><Delete>i<Right>
+
+
+"<<------------------->>
+map <LEADER>os :set spell<CR>
+map <LEADER>cs :set spell!<CR>
+map <LEADER>on :set number<CR>
+map <LEADER>cn :set nonumber<CR>
+
+:map<C-f> <Right> 
+:map<C-p> <Up>
+:map<C-n> <Down>
+:map<C-b> <Left>
+:map<C-a> <Home>
+:map<C-e> <End>
+
+"<<-------------------Table 的翻页快捷键------------------->>
+nmap [[  <C-PageUp>
+nmap ]]  <C-PageDown>
+"<<-------------------Buffer的翻页快捷键------------------->>
+nmap <S-Tab> :bp<CR> 
+nmap <Tab> :bn<CR>
+
+noremap <LEADER><CR> :nohlsearch<CR> "搜索后取消高亮
+map R :source $MYVIMRC<CR> "刷新配置
+map s <nop>
+"map <LEADER>s :w<CR>
+map <LEADER>w :w<CR>
+map <LEADER>q :q<CR>
+
+
+"========多行注释快捷键
+" 多行注释
+vnoremap <leader>/ :s/^/\/\/ /<CR>:nohlsearch<CR>
+" 多行缩进
+vnoremap <tab> :s/^/\t/g<cr>:nohlsearch<CR>
+"vnoremap <Tab> >gv
+"vnoremap <S-Tab> <gv
+
+
+"<<-------------------扩大缩小窗口------------------->>
+"map <C-l> :vertical resize +5<CR>
+"map <C-h> :vertical resize -5<CR>
+"map <C-k> :resize -5<CR>
+"map <C-j> :resize +5<CR>
+
+
+"==== COC按键
+" 将Ctrl-y的功能更改为Plug的Enter键
+"nmap <Plug>(coc-cursors-select-next) <Plug>(coc-cursors-select)
+"nmap <Plug>(coc-cursors-select-previous) <Plug>(coc-cursors-select)
+"nmap <Plug>(coc-cursors-select-next-column) <Plug>(coc-cursors-select)
+"nmap <Plug>(coc-cursors-select-previous-column) <Plug>(coc-cursors-select)
+"nmap <Plug>(coc-cursors-select-all) <Plug>(coc-cursors-select)
+"nmap <Plug>(coc-cursors-select-reset) <Plug>(coc-cursors-select)
+"nmap <CR> <Plug>(coc-cursors-select)
+"inoremap <expr> <CR> pumvisible() ? "\<Plug>confirm_completion" : "\<CR>"
+
+" 设置 <Enter> 作为确认自动完成菜单的快捷键
+"imap <expr> <Plug>confirm_completion coc#_select_confirm()
+
+
+
+"======== Color ========
+
+"settransparency=10  可能是Vim的命令,调节透明度
+set termguicolors
+let g:space_vim_transp_bg = 1 "这个要先放上面
+"set background = "light"
+"set background = "dark"
+"colorscheme iceberg
+"colorscheme embark
+"color space_vim_theme
+"colorscheme herald
+colorscheme default
+""======================AirLine Setting=========================
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+" Vim 在与屏幕/键盘交互时使用的编码(取决于实际的终端的设定)
+  set encoding=utf-8
+  set langmenu=zh_CN.UTF-8
+" 设置打开文件的编码格式
+  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1
+  set fileencoding=utf-8
+" 解决菜单乱码
+  source $VIMRUNTIME/delmenu.vim
+  source $VIMRUNTIME/menu.vim
+" 解决consle输出乱码
+"set termencoding = cp936
+" 设置中文提示
+  language messages zh_CN.utf-8
+" 设置中文帮助
+  set  helplang=cn
+" 设置为双字宽显示，否则无法完整显示如:☆
+  set ambiwidth=double
+" 总是显示状态栏
+  let  laststatus = 2
+  let g:airline_powerline_fonts = 1   " 使用powerline打过补丁的字体
+  let g:airline_theme="light"      " 设置主题
+  let g:airline#extensions#tabline#enabled = 1      " 开启tabline
+  let g:airline#extensions#tabline#left_sep = ''   "tabline中未激活buffer两端的分隔字符
+  let g:airline#extensions#tabline#left_alt_sep = ''      "tabline中buffer显示编号
+"  let g:airline#extensions#tabline#buffer_nr_show = 1
+  let g:airline#extensions#whitespace#enabled = 0
+  let g:airline#extensions#whitespace#symbol = '!'
+  let g:airline#extensions#tabline#buffer_idx_mode = 1
+"  let g:airline#extensions#tabline#buffer_idx_format = {
+"  \ '0': '0 ',
+"  \ '1': '1 ',
+"  \ '2': '2 ',
+"  \ '3': '3 ',
+"  \ '4': '4 ',
+"  \ '5': '5 ',
+"  \ '6': '6 ',
+"  \ '7': '7 ',
+"  \ '8': '8 ',
+"  \ '9': '9 '
+"  \} " 让 tabe 编号变大，暂时不需要
+"
+  nmap <leader>1 <Plug>AirlineSelectTab1
+  nmap <leader>2 <Plug>AirlineSelectTab2
+  nmap <leader>3 <Plug>AirlineSelectTab3
+  nmap <leader>4 <Plug>AirlineSelectTab4
+  nmap <leader>5 <Plug>AirlineSelectTab5
+  nmap <leader>6 <Plug>AirlineSelectTab6
+  nmap <leader>7 <Plug>AirlineSelectTab7
+  nmap <leader>8 <Plug>AirlineSelectTab8
+  nmap <leader>9 <Plug>AirlineSelectTab9
+"  "===============记号位=================
+
+  if !exists('g:airline_symbols')
+"""定义函数SetTitle，自动插入文件头
+  let g:airline_symbols = {}
+  endif
+
+
+  "左側に使用されるセパレータ
+  let g:airline_left_sep = ''
+  let g:airline_left_alt_sep = ''
+  "右側に使用されるセパレータ
+  let g:airline_right_sep = ''
+  let g:airline_right_alt_sep = ''
+  let g:airline_symbols.crypt = '🔒'    "暗号化されたファイル
+  let g:airline_symbols.linenr = '¶'      "行
+  let g:airline_symbols.maxlinenr = '㏑'    "最大行
+  let g:airline_symbols.branch = '⭠'    "gitブランチ
+  let g:airline_symbols.paste = 'ρ'      "ペーストモード
+  let g:airline_symbols.spell = 'Ꞩ'      "スペルチェック
+  let g:airline_symbols.notexists = '∄'    "gitで管理されていない場合
+  let g:airline_symbols.whitespace = 'Ξ'  "空白の警告(余分な空白など)
+"  set guifont=Powerline_Consolas:h14:cANSI
+
+"============AirLine Setting
+"
+"" 使用NERDTree插件查看工程文件。设置快捷键
+nnoremap <silent> <Leader>n  :NERDTreeToggle <CR> 
+" 设置NERDTree子窗口位置
+let NERDTreeWinPos="left"
+" 设置忽略的文件
+let NERDTreeIgnore=['\.vim$', '\~$', '\.o$', '\.d$', '\.a$', '\.out$', '\.tgz$']
+"
+"在VIM启动时自动开启NerdTree
+"autocmd VimEnter * NERDTree
+"
+
+" 使用TlistToggle查看文件函数列表。设置快捷键：<F12>
+nnoremap  <Leader>m  :TlistToggle <CR> 
+" 粘贴到系统剪切板
+"map <Leader>y "*y
+"禁止自动改变当前Vim窗口的大小
+let Tlist_Inc_Winwidth=0
+"把方法列表放在屏幕的右侧
+let Tlist_Use_Right_Window=1
+"let Tlist_Use_Left_Window=0
+"让当前不被编辑的文件的方法列表自动折叠起来
+let Tlist_File_Fold_Auto_Close=1
+
+
+"========= Neovim config 
+let g:loaded_node_provider = 0
+let g:loaded_ruby_provider = 0
+let g:loaded_perl_provider = 0
+
+set encoding=utf-8
+set updatetime=100
+
+"离开文件时不提示'未保存'
+set hidden
+
+"行号共享
+set signcolumn=number
+
+" 让 TAB 键位当做补全的确认键
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item or notify coc.nvim to format
+" <C-g>u breaks current undo, please make your own choice
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" 报错之间切换
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" 同一个单词高亮
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+""========== tagbar
+nmap <leader>f :TagbarToggle<CR>
+
