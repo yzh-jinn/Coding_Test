@@ -1,20 +1,24 @@
 #include<stdio.h>
+#define SETBIT(x, n) ((x) |= (1 << ((n) - 1)) )
 
-int show () {
-	printf("worked!\n");
-	return 1;
+void ShowBits (int x) {
+    int num = sizeof(x) * 8 - 1;
+    while(num >= 0) {
+        if(x & (1 << num)) {
+            printf("1");
+        }
+        else{
+            printf("0");
+        }
+        num--;
+    }
+    printf("\n");
 }
 
-
- int main (void) {
-	int get_v = 0;
-	
-	while(1) {
-		printf("Input num: ");
-		scanf("%d", &get_v);
-		get_v || show();
-//		printf("didn't worked\n");
-	}
-	
-	return 0;
+int main () {
+    printf("input a num: ");
+    int x = 0;
+    scanf("%d", &x);
+    SETBIT(x, 5);
+    ShowBits(x);
 }
