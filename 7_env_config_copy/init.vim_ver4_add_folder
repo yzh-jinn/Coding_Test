@@ -53,7 +53,12 @@ set number
 set foldenable
 "set foldmethod=manual
 set foldmethod=syntax
+"修改键位，使用空格键打开函数
 :nnoremap <space> za
+:nnoremap <leader><space> zn
+"取消亮背景色
+"highlight Folded guibg=NONE ctermbg=NONE
+
 "=====折叠相关内容：
 "za 打开/关闭当前折叠
 "zc 关闭当前打开的折叠
