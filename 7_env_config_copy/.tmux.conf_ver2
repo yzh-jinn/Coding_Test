@@ -3,7 +3,7 @@
 
 #if it's UbuntuOS:
 set -g default-terminal "xterm-256color"
-
+set -g pane-base-index 1
 #Or if it's MacOS:
 #set -g default-terminal "screen-256color" 👆
 
