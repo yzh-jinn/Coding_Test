@@ -1,15 +1,9 @@
 #include "fun.h"
-#include<math.h>
 
 int main (void) {
-	int a = 10;
-	int b = a++;
-	printf("a: %d\nb: %d\n",a,b);
-	
-	int c = 0xDD;
-	printf("before c: %d\n",c);
-	c++;
-	printf("c: %d\n",c);
 
+	int result = CAL(-10, 3);
+	printf("%d",result);
+	CODE(3,0);
 	return 0;
 }
