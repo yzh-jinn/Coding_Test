@@ -8,7 +8,7 @@
 		printf("yes!\n"); \
 	}\
 }while(0)
-
+#define VERSION 0
 
 
 void showBits(int x);
