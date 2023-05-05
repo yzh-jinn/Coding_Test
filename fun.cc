@@ -13,4 +13,3 @@ void showBits (int x) {
     }
     printf("\n");
 }
-
