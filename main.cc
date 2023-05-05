@@ -1,19 +1,11 @@
-//#include "fun.h"
-#include<stdio.h>
-
-#define VERSION 0
+#include "fun.h"
 
 int main (void) {
+	int a = 10;
+	int *p = &a;
 
-#if VERSION==0
-//	int result = CAL(-10, 3);
-	printf("this is 0\n");
-//	CODE(3,0);
+	printf("%p",p);
 
-#elif VERSION==1
-	printf("this is 1\n");
-
-#endif
 	return 0;
 
 }
