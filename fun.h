@@ -15,4 +15,6 @@
 #define NUM 10
 
 
+//=======Function
 void showBits(int x);
+void showArray(int arr[], int num);

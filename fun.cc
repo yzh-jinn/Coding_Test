@@ -13,3 +13,12 @@ void showBits (int x) {
     }
     printf("\n");
 }
+
+void showArray( int *arr, int num) {
+    printf("%lu\n", sizeof(arr));  
+    for (int i = 0; i < num; i++) {
+        printf("%d ", arr[i]);
+    }
+}
+
+
