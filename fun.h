@@ -9,7 +9,10 @@
 		printf("yes!\n"); \
 	}\
 }while(0)
+
 #define VERSION 0
 #define show(x) (std::cout << (x) << std::endl)
+#define NUM 10
+
 
 void showBits(int x);

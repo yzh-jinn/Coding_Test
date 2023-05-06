@@ -1,15 +1,11 @@
 #include "fun.h"
 
-
 int main (void) {
 	
-	int a = 10;
-	int *p = NULL;
-	show(p);
-	show(p+1);
-	int * *p2 = 
-	show(p2);
-
+	const char * a = "hello";
+	for (int i = 0;; i++) {
+		show(*(a+i));
+	}
 
 	return 0;
 
