@@ -21,4 +21,9 @@ void showArray( int *arr, int num) {
     }
 }
 
+void a_showArray( char **arr, int num) {
+	for (int i = 0; i < num; i++) {
+		printf("%s\n", arr[i]);
+	}
 
+}

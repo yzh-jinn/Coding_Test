@@ -18,3 +18,4 @@
 //=======Function
 void showBits(int x);
 void showArray(int arr[], int num);
+void a_showArray(char **arr, int num);
