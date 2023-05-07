@@ -12,7 +12,7 @@ int main (void) {
 	printf("a 首元素 a 的地址：%p，类型修饰符：%s\n", a, typeid(a).name());
 	printf("&a 数组 a 的地址：%p，类型修饰符：%s\n", &a, typeid(&a).name());
 	printf("a2 的地址：%p，类型修饰符：%s\n", &a2, typeid(a2).name());
-	printf("hello centos!!");
+	printf("hello centos!!\n");
 
 
 	return 0;
