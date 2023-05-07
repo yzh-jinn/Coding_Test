@@ -1,4 +1,4 @@
-Compiler = clang++
+Compiler = g++
 Target = cpp_test
 Src = *.cc
 Warning = -Wall -g
