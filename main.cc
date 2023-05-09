@@ -1,32 +1,17 @@
 #include "fun.h"
 
+struct Test {
+	int Num;
+	char *pcName;
+	short sDate;
+	char cha[2];
+	short sBa[4];
+} *p = (struct Test*)0x100000;
+
 int main (void) {
-
-    const char *str = "hello";
-    char arr[] = "world";
-
-    //1. 以指针的形式访问指针， 和以下标的形式访问指针
-    int len = strlen(str);
-    for(int i = 0; i < len; i++){
-        printf("%c \t", *(str+i));
-        printf("%c \n", str[i]);
-    }
-    printf("\n");
-    
-
-    //2. 以指针的形式访问数组， 和以下标的形式访问数组
-    len = strlen(arr);
-    for (int i = 0; i < len; i++) {
-         printf("%c \t", *(arr+i));  
-         printf("%c \n", arr[i]);
-    }
-    printf("\n");
-    
-    //3. 
-    char a[NUM] = {0}; //char *
-
-    char (*p3)[NUM] = &a; // ok, char (*)[NUM] = char *[NUM]
-    char (*p4)[NUM] = a; // no, char (*)[NUM]  = char * , 首元素
+	printf("%p\n", p+0x1);	
+	printf("%p\n", (unsigned long)p+0x1);
+	printf("%p\n", (unsigned int*)p+0x1);
 
 	return 0;
 
