@@ -9,7 +9,7 @@ struct Test {
 } *p = (struct Test*)0x100000;
 
 int main (void) {
-	printf("sizeof(struct Test p)\n",sizeof(struct Test));
+	printf("sizeof(struct Test p): %d\n",sizeof(struct Test));
 	printf("%p\n", p+0x1);	
 	printf("%p\n", (unsigned long)p+0x1);
 	printf("%p\n", (unsigned int*)p+0x1);
