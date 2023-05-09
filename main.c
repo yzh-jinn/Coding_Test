@@ -2,14 +2,19 @@
 #include<stdio.h>
 
 int main (void) {
-	int a[4] = {1,2,3,4};
-	int *ptr = (int *)((int)a + 1);
-	printf("%p\n",(int)a);
-	printf("%d\n",(int)a);
+// 	int a[4] = {1,2,3,4};
+// 	int *ptr = (int *)((int)a + 1);
+// 	printf("%p\n",(int)a);
+// 	printf("%d\n",(int)a);
+// 	printf("%p\n",(int)a+1);
+// 	printf("%d\n",(int)a+1);
+// 	printf("%x\n", *ptr);
+    char a = 96;
+
+    printf("%p\n",a);
+    printf("%d\n",(int)a+1);
 	printf("%p\n",(int)a+1);
-	printf("%d\n",(int)a+1);
-	printf("%x\n", *ptr);
-	
+
 	return 0;
 
 }
