@@ -1,0 +1,165 @@
+#1. 现在Shell执行 echo $TERM
+#2. 看看得到了什么，比如 “xterm” 或者 “Xterm-256color”
+
+#if it's UbuntuOS:
+#set -g default-terminal "xterm-256color"
+set -g default-terminal "screen-256color-bce"
+#set-option -g default-terminal "screen-256color"
+#set -g terminal-overrides "xterm*:smcup@:rmcup@"
+
+#Or if it's MacOS:
+#set -g default-terminal "screen-256color" 👆
+
+setw -g aggressive-resize on
+
+set -g prefix C-q
+unbind C-b
+bind C-q send-prefix
+
+bind C-b select-pane -L
+bind C-n select-pane -D
+bind C-p select-pane -U
+bind C-f select-pane -R
+
+#=======开启鼠标操作=========
+#set-option -g mouse-select-pane on
+#set-option -g mouse-resize-pane on
+
+set-option -g mouse on
+set-option -g pane-base-index 1
+set-option -g base-index 1
+#=============
+# 状态栏
+# 颜色
+#set -g status-bg black
+#set -g status-fg white
+
+#设置状态栏颜色，bg默认是透明，fg指代字体颜色为白色
+
+#set -g status-style bg=default,fg=white,bold #colour234
+#set-option -g status-left-style bg=default,fg=white
+#set-option -g status-right-style bg=default,fg=white
+
+#修改分页线（pane）的颜色
+#set -g pane-border-style "fg=yellow"
+# Make the pane border transparent in tmux // colour8 表示透明色
+#set-option -g pane-active-border-style "fg=colour8"
+#set-option -g pane-border-style "fg=colour8"
+set-option -g status-style bg=default,fg=default
+
+
+#前缀键反应方式
+set -g status-left '#{?client_prefix,#[bg=yellow],}P#[default] [#{session_name}] '
+
+# 对齐方式
+set-option -g status-justify right #centre
+ 
+# 左下角
+set-option -g status-left '#[bg=default,fg=red]<#[fg=cyan] #S#[fg=red] >'
+set-option -g status-left-length 50
+ 
+# 窗口列表
+setw -g automatic-rename on
+set-window-option -g window-status-format '#[dim]#I:#[default]#W#[fg=grey,dim]'
+set-window-option -g window-status-current-format '#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]'
+ 
+# 右下角
+set -g status-right '#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]'
+
+#打开新窗口或会话时，仍留在当前目录
+bind c new-window -c "#{pane_current_path}"
+bind '"' split-window -c "#{pane_current_path}"
+bind % split-window -h -c "#{pane_current_path}"
+
+
+#======PLUGIN=======
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-logging'
+set -g history-limit 10000000
+
+
+run -b '~/.tmux/plugins/tpm/tpm'
+
+
+#-------------------------------------------------
+# 状态栏(Status Bar)
+#-------------------------------------------------
+# 显示prefix键有没有被按下
+set -g @plugin 'tmux-plugins/tmux-prefix-highlight'
+
+
+# 显示cpu信息 https://github.com/tmux-plugins/tmux-cpu
+set -g @plugin 'tmux-plugins/tmux-cpu'
+# 对tmux cpu写了一个配置，觉得没有必要那么花哨，就省去了
+set -g @cpu_low_icon "=" # icon when cpu is low
+set -g @cpu_medium_icon "≡" # icon when cpu is medium
+set -g @cpu_high_icon "≣" # icon when cpu is high
+set -g @cpu_low_fg_color "[bg=red]" # foreground color when cpu is low
+set -g @cpu_medium_fg_color "[bg=yello]" # foreground color when cpu is medium
+set -g @cpu_high_fg_color "[bg=green]" # foreground color when cpu is high
+set -g @cpu_low_bg_color "#[bg=green]" # background color when cpu is low
+set -g @cpu_medium_bg_color "#[bg=yellow]" # background color when cpu is medium
+set -g @cpu_high_bg_color "#[bg=red]" # background color when cpu is high
+set -g @cpu_percentage_format "%3.1f%%" # printf format to use to display percentage
+set -g @cpu_medium_thresh "30" # medium percentage threshold
+set -g @cpu_high_thresh "80" # high percentage threshold
+set -g @cpu_temp_format "%2.0f" # printf format to use to display temperature
+set -g @cpu_temp_unit "C" # supports C & F
+set -g @cpu_temp_medium_thresh "80" # medium temperature threshold
+set -g @cpu_temp_high_thresh "90" # high temperature threshold
+
+
+#set -g @cpu_temp_(low_icon,high_bg_color,etc...) # same defaults as above
+#set -g @ram_(low_icon,high_bg_color,etc...) # same defaults as above
+#set -g @ram_low_icon "=" # icon when cpu is low
+#set -g @ram_medium_icon "≡" # icon when cpu is medium
+#set -g @ram_high_icon "≣" # icon when cpu is high
+#set -g @ram_low_fg_color "[bg=red]" # foreground color when cpu is low
+#set -g @ram_medium_fg_color "[bg=yello]" # foreground color when cpu is medium
+#set -g @ram_high_fg_color "[bg=green]" # foreground color when cpu is high
+#set -g @ram_low_bg_color "#[bg=green]" # background color when cpu is low
+#set -g @ram_medium_bg_color "#[bg=yellow]" # background color when cpu is medium
+#set -g @ram_high_bg_color "#[bg=red]" # background color when cpu is high
+#set -g @ram_percentage_format "%3.1f%%" # printf format to use to display percentage
+#set -g @ram_medium_thresh "30" # medium percentage threshold
+#set -g @ram_high_thresh "80" # high percentage threshold
+
+
+set-option -g status-right-length 200
+#set-option -g status-left-length 200
+
+
+
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+set -g @plugin 'tmux-plugins/tmux-continuum'
+
+
+# 获取各种系统信息的插件【CPU和MEM有BUG】
+set -g @plugin 'samoshkin/tmux-plugin-sysstat'
+# tmux-plugin-sysstat例子
+#set -g status-right "#{sysstat_cpu} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #[fg=cyan]#(echo $USER)#[default]@#H"
+#set -g status-right "CPU:#{cpu_percentage} | #{sysstat_mem} | #{sysstat_swap} | #{sysstat_loadavg} | #[fg=cyan]#(echo $USER)#[default]@#H"
+
+# 状态栏设定
+# 混合tmux-cpu和tmux-plugin-sysstat
+#set -g status-right "#{prefix_highlight}#{online_status}|\
+CPU:#{cpu_percentage}|GPU:#{gpu_percentage}|\
+#{sysstat_loadavg}|\
+%H:%M Jinn "
+
+# 显示当前主机是否联网（以连通百度为标准）
+set -g @plugin 'tmux-plugins/tmux-online-status'
+# 如果图标不显示则用下面两个代替
+set -g @online_icon "✅"
+set -g @offline_icon "✘"
+set -g status-right "#{online_status}"
+set -g @plugin 'tmux-plugins/tmux-battery'
+
+#主要配置在这里：
+#set -g status-right "\s#{prefix_highlight}#{prefix_highlight_show_copy_mode}\s #{sysstat_mem} | #{sysstat_cpu} | BAT:#[fg=red,bold] #{battery_percentage}% #[fg=white,bold]| Online: #{online_status} \s #[fg=yellow,bold]%h_%d #[fg=white]| #[fg=red,bold]%a #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
+
+set -g status-right "#{prefix_highlight}#{prefix_highlight_show_copy_mode}  <> #[fg=yellow,bold] Date: [%Y] %h/%d #[fg=white]| #[fg=red,bold] Days: %a  #[fg=white]| #[fg=cyan,bold]%H:%M  -Jinn- "
+
