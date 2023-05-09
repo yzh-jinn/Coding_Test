@@ -22,6 +22,11 @@ int main (void) {
     }
     printf("\n");
     
+    //3. 
+    char a[NUM] = {0}; //char *
+
+    char (*p3)[NUM] = &a; // ok, char (*)[NUM] = char *[NUM]
+    char (*p4)[NUM] = a; // no, char (*)[NUM]  = char * , 首元素
 
 	return 0;
 
