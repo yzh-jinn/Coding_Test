@@ -3,6 +3,7 @@
 #include<math.h>
 #include<iostream>
 #include<typeinfo>
+#include<cstring>
 #define CAL(x,y)  (((y) == 0 ? 0 : ( (x) % (y))) )
 #define CODE(x,y) do{ \
 	printf("%d\n",(x)); \

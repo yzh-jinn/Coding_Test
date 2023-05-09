@@ -2,18 +2,26 @@
 
 int main (void) {
 
-	int a[10] = {0};
-	int b[10] = {0};
-	int c[] = {0};
-	int d[4] = {0};
-	int a2 = 10;
-	int (*p)[10] = &a;
+    const char *str = "hello";
+    char arr[] = "world";
 
-	printf("a 首元素 a 的地址：%p，类型修饰符：%s\n", a, typeid(a).name());
-	printf("&a 数组 a 的地址：%p，类型修饰符：%s\n", &a, typeid(&a).name());
-	printf("a2 的地址：%p，类型修饰符：%s\n", &a2, typeid(a2).name());
-	printf("hello centos!!\n");
+    //1. 以指针的形式访问指针， 和以下标的形式访问指针
+    int len = strlen(str);
+    for(int i = 0; i < len; i++){
+        printf("%c \t", *(str+i));
+        printf("%c \n", str[i]);
+    }
+    printf("\n");
+    
 
+    //2. 以指针的形式访问数组， 和以下标的形式访问数组
+    len = strlen(arr);
+    for (int i = 0; i < len; i++) {
+         printf("%c \t", *(arr+i));  
+         printf("%c \n", arr[i]);
+    }
+    printf("\n");
+    
 
 	return 0;
 
