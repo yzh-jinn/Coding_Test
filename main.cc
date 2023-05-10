@@ -3,15 +3,12 @@
  
 int main (void) {
  
-	char c[3][4] = {
-		{1,2,3,4},
-		{5,6,7,8},
-		{-1,-2,-3,-4}
-	};
-
-//	char (*p)[4] = c;
-	printf("%c\n",*c);
+	int a[5][5];
+	int (*p)[4];
 	
+	p = a;
+	printf("a_ptr = %p, p_ptr = %p\n", &a[4][2], &p[4][2]);
+	printf("%p, %d\n", &p[4][2] - &a[4][4], &p[4][2] - &a[4][2]);
 
 	return 0;
 
