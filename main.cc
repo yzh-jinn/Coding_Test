@@ -1,6 +1,6 @@
 #include "fun.h"
 //#include<stdio.h>
-
+ 
 int main (void) {
  
 	char c[3][4] = {
@@ -10,7 +10,7 @@ int main (void) {
 	};
 
 //	char (*p)[4] = c;
-	printf("%s\n",*c);
+	printf("%c\n",*c);
 	
 
 	return 0;
