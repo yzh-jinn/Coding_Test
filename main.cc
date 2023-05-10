@@ -2,20 +2,16 @@
 //#include<stdio.h>
 
 int main (void) {
-// 	int a[4] = {1,2,3,4};
-// 	int *ptr = (int *)((int)a + 1);
-// 	printf("%p\n",(int)a);
-// 	printf("%d\n",(int)a);
-// 	printf("%p\n",(int)a+1);
-// 	printf("%d\n",(int)a+1);
-// 	printf("%x\n", *ptr);
-    char a = 96;
-	
-	show(a);
-	show((int)a);
-	show((int)a+1);
-	show(a+1);
  
+	char c[3][4] = {
+		{1,2,3,4},
+		{5,6,7,8},
+		{-1,-2,-3,-4}
+	};
+
+//	char (*p)[4] = c;
+	printf("%s\n",*c);
+	
 
 	return 0;
 
