@@ -1,5 +1,5 @@
-//#include "fun.h"
-#include<stdio.h>
+#include "fun.h"
+//#include<stdio.h>
 
 int main (void) {
 // 	int a[4] = {1,2,3,4};
@@ -10,10 +10,12 @@ int main (void) {
 // 	printf("%d\n",(int)a+1);
 // 	printf("%x\n", *ptr);
     char a = 96;
-
-    printf("%p\n",a);
-    printf("%d\n",(int)a+1);
-	printf("%p\n",(int)a+1);
+	
+	show(a);
+	show((int)a);
+	show((int)a+1);
+	show(a+1);
+ 
 
 	return 0;
 
