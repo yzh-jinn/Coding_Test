@@ -4,6 +4,7 @@
 #include<iostream>
 #include<typeinfo>
 #include<cstring>
+#include<stdlib.h>
 #define CAL(x,y)  (((y) == 0 ? 0 : ( (x) % (y))) )
 #define CODE(x,y) do{ \
 	printf("%d\n",(x)); \
