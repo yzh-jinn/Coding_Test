@@ -95,12 +95,36 @@ void showList( Node_t * head) {
     Node_t *p = head->next; //或者head = head->next;
 
     while (p) {
-        printf("%d", p->data);
+        printf("%d -> ", p->data);
         p = p->next; //不能 p++
     }
-    printf("\n");
+    printf("NULL\n");
+    sleep(1);
 }
 
 void deleteNode( Node_t * head) {
-
+    //先定义一个指针来保存要删除的节点位置，然后再释放
+    assert (head);
+    Node_t *p = head->next;
+    head->next = p->next;
+    
+    free(p);
+    p = NULL;
 }
+
+//=====main 
+/*	
+    Node_t *head = allocNode(0);
+	printf("插入测试:\n");
+	for (int i = 0; i < NUM; i++) {
+		insertNode(head, i); //头插
+		showList(head);
+	}
+    
+	printf("删除测试:\n");
+	for (int i = 0; i < NUM; i++) {
+		deleteNode(head); //头删
+		showList(head);
+	}
+	free(head); 
+*/

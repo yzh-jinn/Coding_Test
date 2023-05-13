@@ -6,6 +6,7 @@
 #include<cstring>
 #include<stdlib.h>
 #include<assert.h>
+#include<unistd.h>
 #define CAL(x,y)  (((y) == 0 ? 0 : ( (x) % (y))) )
 #define CODE(x,y) do{ \
 	printf("%d\n",(x)); \

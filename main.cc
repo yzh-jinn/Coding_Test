@@ -1,9 +1,6 @@
 #include "fun.h"
 //#include<stdio.h>
 
-
-
-
 int main (void) {
 	Node_t *head = allocNode(0);
 	printf("插入测试:\n");
@@ -18,6 +15,7 @@ int main (void) {
 		deleteNode(head); //头删
 		showList(head);
 	}
+	free(head);
 
     return 0; 
 }
