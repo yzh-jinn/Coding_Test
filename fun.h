@@ -22,3 +22,10 @@
 void showBits(int x);
 void showArray(int arr[], int num);
 void a_showArray(char **arr, int num);
+
+void getStr(char **pp);
+
+void welcome();
+void getGift();
+void login( void (*welcome)(), void (*getGift)() );
+

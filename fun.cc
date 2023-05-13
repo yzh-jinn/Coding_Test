@@ -27,3 +27,43 @@ void a_showArray( char **arr, int num) {
 	}
 
 }
+//====Testing two-dimensional pointers
+void getStr(char **pp) {
+    *pp = (char *)malloc(sizeof(char) * NUM);
+    if(NULL != *pp) {
+        strcpy(*pp, "hello");
+    }
+    else{
+        //...
+    }
+	printf("%p\n", &pp);
+}
+
+
+//====function pointer test
+void welcome(){
+    printf("##### welcome ####\n");
+    printf("#1.Play    2.Exit#\n");
+    printf("##### welcome ####\n");
+}
+
+void getGift() {
+    printf("Congratulation ! \n");
+}
+
+void login( void (*welcome)(), void (*getGift)() ) {
+    #define NAME "xiaoxuesheng"
+    #define PASSWD "12345"
+    
+    char name[32];
+    char passwd[32];
+    printf("Enter your name :");
+    scanf("%s",name);
+    printf("Enter your password: ");
+    scanf("%s", passwd);
+    
+    if (strcmp (name, NAME) == 0 && strcmp(passwd, PASSWD) == 0 ) {
+        welcome();
+        getGift();
+    }
+}
