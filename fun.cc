@@ -67,3 +67,40 @@ void login( void (*welcome)(), void (*getGift)() ) {
         getGift();
     }
 }
+
+//=====单链表动态内存测试
+Node_t * allocNode(int x) {
+    Node_t *node = (Node_t *)malloc(sizeof (Node_t));
+    if (node == NULL) {
+        perror("malloc ! \n");
+        exit(1);
+    }
+    node->data = x;
+    node->next = NULL;
+
+    return node; 
+}
+
+void insertNode( Node_t * head, int x) {
+    assert(head);
+    Node_t *node = allocNode(x);
+    node->next = head->next;
+    head->next = node; //头插
+
+}
+
+void showList( Node_t * head) {
+    assert(head);
+ 
+    Node_t *p = head->next; //或者head = head->next;
+
+    while (p) {
+        printf("%d", p->data);
+        p = p->next; //不能 p++
+    }
+    printf("\n");
+}
+
+void deleteNode( Node_t * head) {
+
+}
