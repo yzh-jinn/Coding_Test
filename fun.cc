@@ -27,7 +27,7 @@ void a_showArray( char **arr, int num) {
 	}
 
 }
-//====Testing two-dimensional pointers
+//=====Testing two-dimensional pointers
 void getStr(char **pp) {
     *pp = (char *)malloc(sizeof(char) * NUM);
     if(NULL != *pp) {
@@ -40,7 +40,7 @@ void getStr(char **pp) {
 }
 
 
-//====function pointer test
+//=====function pointer test
 void welcome(){
     printf("##### welcome ####\n");
     printf("#1.Play    2.Exit#\n");
