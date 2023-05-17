@@ -42,3 +42,21 @@ void insertNode( Node_t * head, int x);
 void showList( Node_t * head);
 void deleteNode( Node_t * head);
 
+
+//=====顺序表测试
+#define TRUE 1
+#define FALSE 0
+#define OK 1
+#define ERROR 0
+#define INFEASIBLE -1
+#define my_OVERFLOW -2
+#define MAXSIZE 100
+
+typedef int Status;
+typedef char ElemType;
+
+typedef struct SqList{
+    ElemType *elem; //动态数组，使用函数单独开辟 空间 malloc(sizeof(SqList))
+    size_t size; // 有效数据个数
+    size_t capacity; //容量上限
+}SqList;

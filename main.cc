@@ -4,8 +4,6 @@
 
 
 int main (void) {
-    SqList myList;
-    Status status;
 
 
     return 0;

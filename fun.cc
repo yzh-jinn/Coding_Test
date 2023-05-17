@@ -129,13 +129,13 @@ void deleteNode( Node_t * head) {
 	free(head); 
 */
 
-//=====线性表练习
 
+//=====线性表练习
 Status initList(SqList *L) {
     L->elem = (ElemType *)malloc(sizeof(ElemType)*MAXSIZE);
     if(L->elem == NULL) {
-        printf("%s",#OVERFLOW)
-        exit(OVERFLOW); 
+        printf("%d",my_OVERFLOW);
+        exit(my_OVERFLOW); 
     }//可以用 assert(*p) 代替,或者自己写一个函数
     L->size = 0; //空表的有效元素为0
     L->capacity = MAXSIZE; //设置线性表的最大容量
@@ -154,7 +154,7 @@ void destroyList(SqList *L) {
 
 void clearList(SqList *L) {
     if (L == NULL) { //查看结构体是否为空
-        exit(OVERFLOW);
+        exit(my_OVERFLOW);
     }
     L->size = 0;
 }
@@ -171,8 +171,8 @@ int getLength(SqList L){
 }
     
 int listSize(SqList L) {
-    if(L == NULL) {
-        return #ERROR;
+    if(L.elem == NULL) {
+        return ERROR;
     }
     return (L.size);
 }    
