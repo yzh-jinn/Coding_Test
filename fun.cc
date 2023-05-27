@@ -176,3 +176,87 @@ int listSize(SqList L) {
     }
     return (L.size);
 }    
+
+
+//=====栈函数练习
+struct myStack* createStack(){
+    struct myStack* stack = (struct myStack*)malloc(sizeof(struct myStack));
+    //结构体变量的初始化
+    stack->stackMemory = (int *)malloc(sizeof(int)*MAXSTACK);
+    stack->stackTop = -1;
+    return stack;
+}
+
+void push(struct myStack* stack, int data){
+    //pre: 进栈要考虑满  1.栈顶标记往上走  2.将元素放到栈顶标记为下标的数组中
+    
+    if(stack->stackTop == MAXSTACK) { // 做一个防御性编程
+        printf("栈满，无法入栈\n");
+        return ;
+    }
+    
+    stack->stackTop++; //因为栈顶标记初始是-1
+    stack->stackMemory[stack->stackTop] = data; 
+}
+
+int empty(struct myStack * stack) {
+    return stack->stackTop == -1; //返回 1 表示NULL 返回0 表示非 NULL
+}
+
+void pop(struct myStack* stack, int *data) {
+    if(stack->stackTop == -1) {
+        printf("栈空\n");
+        return;
+    }
+    *data = stack->stackMemory[stack->stackTop--];
+}
+
+/* 栈实际用法练习：2个例子
+int main (void) {
+
+    //=====短除法
+    struct myStack* stack = createStack();
+    int data = 0;
+    while(!empty(stack)){
+        pop(stack, &data);
+        printf("%d", data);
+    }
+    printf("\n");
+    int num = 11111;
+    printf("num %d的二进制是: \n", num);
+    struct myStack* binaryStack = createStack();
+    
+    while(num != 0) {
+        push(binaryStack, num % 2);
+        num /= 2; //除数自动取整
+    }    
+    
+    int data_2 = 0;
+    
+    while(!empty(binaryStack)) {
+        pop(binaryStack, &data);
+        printf("%d", data);
+    }
+    printf("\n\n");
+
+    //=====实际操作：简单化，会直接使用数组而不是写函数: 短除法举例2
+    int stackArray[50];
+    int stackTop = -1; //创建栈
+    
+    int num_2 = 11111;
+    printf("num_2 %d的二进制是: \n", num_2);
+    while(num_2 != 0){
+        stackArray[++stackTop] = num_2 % 2;
+        num_2 /= 2;
+    }
+    while(stackTop != -1) {
+        printf("%d", stackArray[stackTop--]);
+    }
+    
+    //总结: 上面的函数是一种思路，实际使用的时候只会用数组做栈+队列
+    
+    printf("\n");
+
+    return 0;
+}
+*/

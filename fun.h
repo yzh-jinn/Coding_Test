@@ -18,6 +18,7 @@
 #define VERSION 0
 #define show(x) (std::cout << (x) << std::endl)
 #define NUM 10
+#define MAXSTACK 100
 
 
 //=======Function
@@ -60,3 +61,13 @@ typedef struct SqList{
     size_t size; // 有效数据个数
     size_t capacity; //容量上限
 }SqList;
+
+//=====栈 Stack
+struct myStack{
+    int *stackMemory;    //以栈中存储的数据是整数为例
+    int stackTop;        //栈顶标记
+};
+struct myStack* createStack();
+void push(struct myStack* stack, int data);
+int empty(struct myStack * stack);
+void pop(struct myStack* stack, int *data);
