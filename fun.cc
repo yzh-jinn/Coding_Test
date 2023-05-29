@@ -1,5 +1,6 @@
 #include "fun.h"
 
+
 void showBits (int x) {
     int num = sizeof(x) * 8 - 1;
     while(num >= 0) {
