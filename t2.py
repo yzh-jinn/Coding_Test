@@ -49,7 +49,8 @@ class People(Animal):
 
 
 p1 = People("Human")
-p2 = Animal("Bird")
 p1.display()
 p1.say("Margen", 12, 2011, "Girl")
+
+p2 = Animal("Bird")
 p2.display()
