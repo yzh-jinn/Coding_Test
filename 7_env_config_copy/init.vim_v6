@@ -87,7 +87,7 @@ set showmatch  " 高亮显示匹配的括号
 "let g:Tlist_Ctags_Cmd='/usr/bin/ctags'
 
 "Error resolve: You need to do 'brew install ctags' first
-let g:Tlist_Ctags_Cmd='/opt/homebrew/bin/ctags'
+"let g:Tlist_Ctags_Cmd='/opt/homebrew/bin/ctags'                      "forMacOS
 
 
 
