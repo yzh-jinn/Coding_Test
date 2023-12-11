@@ -1,11 +1,6 @@
-# def testADD(a:int = 1, b:int = 3):
-#     return a + b
+def my_fun(n1: int = 1, n2: int = 2, n3: int = 3):
+    print(f"N1: {n1}, N2: {n2}, N3: {n3}")
 
-# print(testADD())
-
-def testADD(a:int = 10, b:int = 20):
-    return a, a+b
-
-a, b = testADD(38, 90)
-
-print(a, b)
+my_fun()
+my_fun(5)
+my_fun(n2 = 6)
