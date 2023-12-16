@@ -1,6 +1,22 @@
-def my_fun(n1: int = 1, n2: int = 2, n3: int = 3):
-    print(f"N1: {n1}, N2: {n2}, N3: {n3}")
+# new_dict = {key_expression: value_expression for item in iterable if conditions}
 
-my_fun()
-my_fun(5)
-my_fun(n2 = 6)
+# key_expression: value_expression     # 新字典的格式
+# item   # key:value
+# iterable  # 筛选条件，比如： student.items
+
+# 举例
+
+grades = {
+    "Bob" : 40,
+    "Mike" : 70,
+    "Emmy" : 120
+}
+
+new_grades = {
+    name: grade
+    for name, grade
+    in grades.items()
+    if grade >= 60
+}
+
+print(new_grades)
