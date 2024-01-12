@@ -1,34 +1,31 @@
-import csv
+def calculate(operation: str, n1: int, n2: int):
+    def add(n1, n2):
+        return n1 + n2
 
-with open("newfile.csv",'w') as file:
+    def sub(n1, n2):
+        return n1 - n2
 
-    csv_header = ["Name", "Chinese", "English", "Math"]
+    def div(n1, n2):
+        if n2 == 0:
+            return "Division by zero is not allowed"
+        return n1 / n2
 
-    csv_writer = csv.DictWriter(file, csv_header)
+    def mul(n1, n2):
+        return n1 * n2
 
-    rows = [
-        {
-            "Name": "Mike",
-            "Chinese" : 90,
-            "English" : 100,
-            "Math" : 120
-        },
-        {
-            "Name": "Bob",
-            "Chinese" : 89,
-            "English" : 66,
-            "Math" : 89
-        },
-        {
-            "Name": "Emmy",
-            "Chinese" : 60,
-            "English" : 80,
-            "Math" : 100
-        }
-    ]
-
-    csv_writer.writeheader()
-    csv_writer.writerows(rows)
+    if operation == 'add':
+        return add(n1, n2)
+    elif operation == 'sub':
+        return sub(n1, n2)
+    elif operation == 'div':
+        return div(n1, n2)
+    elif operation == 'mul':
+        return mul(n1, n2)
+    else:
+        return "Invalid operation"
     
-if __name__ == '__main__' :
-    filename = "newfile.csv"
+
+# f1 = calculate('add', 1, 2)
+f2 = calculate()
+
+f2('sub', 2, 1)
