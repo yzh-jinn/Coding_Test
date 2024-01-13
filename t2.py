@@ -1,13 +1,23 @@
+from re import I
+
+
 class Student:
     pass
 
 std_1 = Student()
 
 def main():
+    st = 12
     print(type(Student))
     print("----")
     print("id = {}".format(hex(id(std_1))))
     print(f"id_number = {id(std_1)}")
+    print("----")
+    print(f"st = {st}")
+    print(f"st = {id(st)}")
+    print(f"id_number = {hex(id(st))}")
+    
+
 
 
 
