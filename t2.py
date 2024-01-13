@@ -1,7 +1,21 @@
-class Stduent:
+class Student:
     pass
 
+std_1 = Student()
 
+def main():
+    print(type(Student))
+    print("----")
+    print(id(std_1))
+    print(hex(id(std_1)))
+
+
+
+
+
+
+if __name__ == '__main__':
+    main()
 # def calculate(operation: str, n1: int, n2: int):
 #     def add(n1, n2):
 #         return n1 + n2
