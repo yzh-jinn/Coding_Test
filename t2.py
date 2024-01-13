@@ -6,7 +6,7 @@ std_1 = Student()
 def main():
     print(type(Student))
     print("----")
-    print(id(std_1))
+    print("id:{}".format(id(std_1)))
     print(hex(id(std_1)))
 
 
