@@ -7,22 +7,25 @@ class Student:
 std_1 = Student()
 
 def main():
-    st = 12
-    print(type(Student))
-    print("----")
-    print("id = {}".format(hex(id(std_1))))
-    print(f"id_number = {id(std_1)}")
-    print("----")
-    print(f"st = {st}")
-    print(f"st = {id(st)}")
-    print(f"id_number = {hex(id(st))}")
-    
+    a: int = 10
+    b: float = 11.2
+
+    print(type(a + b))
+ 
+ 
+ 
+ 
+
+
+
 
 
 
 
 if __name__ == '__main__':
     main()
+
+
 # def calculate(operation: str, n1: int, n2: int):
 #     def add(n1, n2):
 #         return n1 + n2
