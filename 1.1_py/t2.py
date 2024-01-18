@@ -12,12 +12,6 @@ def main():
 
     print(type(a + b))
  
- 
- 
- 
-
-
-
 
 
 
