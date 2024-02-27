@@ -1,6 +1,7 @@
 from enum import Enum
 
-@Enum.unique
+
+@enum.unique
 class Status(Enum):
     SUCCESS = 1
     OK = 2
