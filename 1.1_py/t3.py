@@ -1,8 +1,8 @@
-from enum import Enum
+import enum
 
 
 @enum.unique
-class Status(Enum):
+class Status(enum.Enum):
     SUCCESS = 1
     OK = 2
     FAIL = 3
